@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Date</th>
+            <th scope="col">Open</th>
+            <th scope="col">Close</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{response['name']}}</td>
+            <td>{{response['symbol']}}</td>
+            <td>{{response['datetime']}}</td>
+            <td>{{response['open']}}</td>
+            <td>{{response['close']}}</td>
+          </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
+
+

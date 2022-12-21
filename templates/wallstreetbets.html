@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div>
+    <table id="example" class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Number of comments</th>
+            <th scope="col">Sentiment</th>
+            <th scope="col">Sentiment Score</th>
+            <th scope="col">Ticker</th>
+          </tr>
+        </thead>
+        {% for resposes in response %}
+        <tbody>
+          <tr>
+            <td>{{resposes['no_of_comments']}}</td>
+            <td>{{resposes['sentiment']}}</td>
+            <td>{{resposes['sentiment_score']}}</td>
+            <td>{{resposes['ticker']}}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+<!-- <script type="text/javascript">
+    new gridjs.Grid({
+        columns: [
+        { id: 'name', name: 'Name' },
+        { id: 'age', name: 'Age' },
+        { id: 'address', name: 'Address', sort: false },
+        { id: 'phone', name: 'Phone Number', sort: false },
+        { id: 'email', name: 'Email' },
+        ],
+        data: [
+        {% for user in users %}
+            {
+            name: '{{ user.name }}',
+            age: '{{ user.age }}',
+            address: '{{ user.address }}',
+            phone: '{{ user.phone }}',
+            email: '{{ user.email }}',
+            },
+        {% endfor %}
+        ],
+        search: {
+        selector: (cell, rowIndex, cellIndex) => [0, 1, 4].includes(cellIndex) ? cell : null,
+        },
+        sort: true,
+        pagination: true,
+    }).render(document.getElementById('table'));
+</script> -->
+
+{% endblock %}
